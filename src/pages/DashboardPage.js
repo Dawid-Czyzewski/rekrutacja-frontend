@@ -31,7 +31,7 @@ function DashboardPage() {
             let hasNextPage = true;
 
             while (hasNextPage) {
-                const response = await fetch(`http://127.0.0.1:8000/docs/smss?page=${page}`, {
+                const response = await fetch(`http://127.0.0.1:8000/api/smss?page=${page}`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -71,7 +71,7 @@ function DashboardPage() {
             setSmsList(smsList.filter(sms => sms.id !== smsId));
 
             const token = localStorage.getItem('token');
-            const response = await fetch(`http://127.0.0.1:8000/docs/smss/${smsId}`, {
+            const response = await fetch(`http://127.0.0.1:8000/api/smss/${smsId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -148,7 +148,7 @@ function DashboardPage() {
 
             editedSmsCopy['add_date'] = convertedDate;
 
-            const response = await fetch(`http://127.0.0.1:8000/docs/smss/${id}`, {
+            const response = await fetch(`http://127.0.0.1:8000/api/smss/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -200,7 +200,7 @@ function DashboardPage() {
     const handleAddSms = async (newSms) => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://127.0.0.1:8000/docs/smss', {
+            const response = await fetch('http://127.0.0.1:8000/api/smss', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,
