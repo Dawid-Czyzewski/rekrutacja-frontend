@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AddSmsModal from '../modals/AddSmsModal';
-import '../styles/DashboardPage.css'; // Importuj style
+import '../styles/DashboardPage.css';
 
 function DashboardPage() {
     const [smsList, setSmsList] = useState([]);

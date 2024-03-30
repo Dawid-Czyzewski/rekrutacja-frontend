@@ -28,7 +28,7 @@ function LoginPage() {
     };
 
     return (
-        <div className="container"> {/* Dodaj kontener dla wyśrodkowania */}
+        <div className="container">
             <form className="form" onSubmit={handleSubmit}>
                 <div className="input-group">
                     <input 
